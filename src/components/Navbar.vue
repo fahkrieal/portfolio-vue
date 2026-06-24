@@ -133,44 +133,39 @@ onUnmounted(() => {
           class="px-6 py-6 flex flex-col gap-5"
         >
           <a
-            href="#about"
-            @click="closeMenu"
-            class="mobile-link"
-          >
-            About
-          </a>
+          href="#hero"
+          class="nav-link"
+        >
+          Home
+        </a>
+        
+        <a
+          href="#about"
+          class="nav-link"
+        >
+          About
+        </a>
 
-          <a
-            href="#skills"
-            @click="closeMenu"
-            class="mobile-link"
-          >
-            Skills
-          </a>
+        <a
+          href="#skills"
+          class="nav-link"
+        >
+          Skills
+        </a>
 
-          <a
-            href="#experience"
-            @click="closeMenu"
-            class="mobile-link"
-          >
-            Experience
-          </a>
+        <a
+          href="#projects"
+          class="nav-link"
+        >
+          Projects
+        </a>
 
-          <a
-            href="#projects"
-            @click="closeMenu"
-            class="mobile-link"
-          >
-            Projects
-          </a>
-
-          <a
-            href="#contact"
-            @click="closeMenu"
-            class="mobile-link"
-          >
-            Contact
-          </a>
+        <a
+          href="#contact"
+          class="nav-link"
+        >
+          Contact
+        </a>
         </div>
       </div>
     </transition>

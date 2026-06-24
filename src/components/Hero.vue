@@ -1,9 +1,9 @@
 <template>
   <section
     id="hero"
-    class="min-h-screen flex items-center bg-gray-950 relative overflow-hidden pt-20"
+    class="min-h-screen flex items-center bg-gray-950 relative overflow-hidden pt-28 lg:pt-20"
   >
-    <!-- Background Effects -->
+    <!-- Background Glow -->
     <div
       class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full"
     />
@@ -16,10 +16,47 @@
       class="max-w-6xl mx-auto px-6 w-full relative z-10"
     >
       <div
-        class="grid lg:grid-cols-2 gap-12 items-center"
+        class="grid lg:grid-cols-2 gap-16 items-center"
       >
-        <!-- LEFT -->
-        <div data-aos="fade-right">
+
+        <!-- PHOTO -->
+<div
+  data-aos="fade-left"
+  class="order-1 lg:order-2 flex justify-center lg:justify-end"
+>
+  <div class="hero-profile">
+
+    <!-- Glow -->
+    <div class="hero-profile-glow"></div>
+
+    <!-- Ring -->
+    <div class="hero-profile-ring"></div>
+
+    <!-- Frame -->
+    <div class="hero-profile-frame">
+
+      <img
+        src="/profile.jpg"
+        alt="Muhamad Fahkrie Al Mufid"
+        class="hero-profile-image"
+      />
+
+    </div>
+
+    <!-- Status -->
+    <div class="hero-profile-status">
+      <span class="hero-status-dot"></span>
+      Junior Developer
+    </div>
+
+  </div>
+</div>
+
+        <!-- TEXT -->
+        <div
+          data-aos="fade-right"
+          class="order-2 lg:order-1 text-center lg:text-left"
+        >
 
           <!-- Status -->
           <div
@@ -56,7 +93,7 @@
 
           <!-- Description -->
           <p
-            class="mt-6 text-lg text-gray-400 leading-relaxed max-w-xl"
+            class="mt-6 text-lg text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0"
           >
             Mahasiswa Informatika yang berfokus pada
             pengembangan aplikasi web modern menggunakan
@@ -66,71 +103,30 @@
 
           <!-- Tech Stack -->
           <div
-            class="flex flex-wrap gap-3 mt-8"
+            class="flex flex-wrap gap-3 mt-8 justify-center lg:justify-start"
           >
-            <span class="tech-tag">
-              Laravel
-            </span>
-
-            <span class="tech-tag">
-              Vue.js
-            </span>
-
-            <span class="tech-tag">
-              MySQL
-            </span>
-
-            <span class="tech-tag">
-              Tailwind CSS
-            </span>
-
-            <span class="tech-tag">
-              REST API
-            </span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">REST API</span>
           </div>
 
-          <!-- CV Button -->
+          <!-- CV -->
           <div
-            class="mt-10"
+            class="mt-10 flex justify-center lg:justify-start"
           >
             <a
               href="/cv.pdf"
               target="_blank"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition duration-300"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition-all duration-300 hover:-translate-y-1"
             >
               Download CV
             </a>
           </div>
+          <br>
 
         </div>
-
-        <!-- RIGHT -->
-<div
-  data-aos="fade-left"
-  class="flex justify-center"
->
-  <div class="profile-wrapper">
-
-    <!-- Glow -->
-    <div class="profile-glow"></div>
-
-    <!-- Status Card -->
-    <div class="profile-status">
-      <span class="status-dot"></span>
-      Junior Developer
-    </div>
-
-    <!-- Profile Image -->
-    <div class="profile-frame">
-      <img
-        src="/profile.jpg"
-        alt="Muhamad Fahkrie Al Mufid"
-        class="profile-image"
-      />
-    </div>
-
-  </div>
-</div>
 
       </div>
     </div>

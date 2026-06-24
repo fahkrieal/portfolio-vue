@@ -40,14 +40,14 @@ const projects = [
   <div
   class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center"
 >
-  <div class="w-250 h-px bg-gradient-to-r from-transparent to-cyan-400/60"></div>
+  <div class="w-200 h-px bg-gradient-to-r from-transparent to-cyan-400/60"></div>
 
   <div
     class="w-2 h-2 rounded-full bg-cyan-400 mx-3
           shadow-[0_0_12px_rgba(34,211,238,0.8)]">
   </div>
 
-  <div class="w-250 h-px bg-gradient-to-l from-transparent to-cyan-400/60"></div>
+  <div class="w-200 h-px bg-gradient-to-l from-transparent to-cyan-400/60"></div>
 </div>
 
     <div class="max-w-6xl mx-auto px-6">
