@@ -1,142 +1,93 @@
 <template>
-  <section
-  id="about"
-  class="py-32 bg-gray-950 relative overflow-hidden"
->
-  <div
-  class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center"
->
-  <div class="w-200 h-px bg-gradient-to-r from-transparent to-cyan-400/60"></div>
+  <section id="about" class="about-section">
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
 
-  <div
-    class="w-2 h-2 rounded-full bg-cyan-400 mx-3
-          shadow-[0_0_12px_rgba(34,211,238,0.8)]">
-  </div>
+    <!-- =======================================
+      BACKGROUND
+    ======================================= -->
 
-  <div class="w-200 h-px bg-gradient-to-l from-transparent to-cyan-400/60"></div>
-</div>
+    <div class="section-bg">
+      <div class="section-grid"></div>
 
-    <!-- Background -->
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 blur-3xl rounded-full"
-    />
+      <div class="section-light-left"></div>
 
-    <div
-      class="max-w-6xl mx-auto px-6 relative z-10"
-    >
-      <div
-        class="grid lg:grid-cols-2 gap-20 items-center"
-      >
-        <!-- LEFT -->
-        <div data-aos="fade-right">
+      <div class="section-light-right"></div>
 
-          <span
-            class="text-cyan-400 uppercase tracking-[0.3em] font-semibold "
-          >
+      <div class="section-center-glow"></div>
+
+      <div class="section-noise"></div>
+    </div>
+
+    <!-- Ambient glow -->
+    <div class="about-glow"></div>
+
+    <div class="about-container">
+      <div class="about-grid">
+        <!-- LEFT: CONTENT -->
+        <div class="about-content" data-aos="fade-right">
+          <span class="about-kicker">
+            <span class="about-kicker-dot"></span>
             About Me
           </span>
 
-          <h2
-            class="mt-6 text-4xl md:text-5xl font-black text-white leading-tight"
-          >
-            Creating modern web applications
-            that solve real-world problems.
+          <h2 class="about-heading">
+            Creating modern web applications that solve real-world problems.
           </h2>
 
-          <p
-            class="mt-8 text-gray-400 text-lg leading-relaxed"
-          >
-            Saya adalah mahasiswa Teknik Informatika yang berfokus
-            pada pengembangan aplikasi web modern menggunakan
-            Laravel, Vue.js, MySQL, Tailwind CSS, dan REST API.
+          <p class="about-lead">
+            Saya mahasiswa Teknik Informatika yang fokus membangun aplikasi web modern dengan
+            Laravel, Vue.js, MySQL, Tailwind CSS, dan REST API — dari dashboard, platform SaaS,
+            sistem informasi, sampai aplikasi berbasis geolokasi.
           </p>
 
-          <p
-            class="mt-5 text-gray-400 text-lg leading-relaxed"
-          >
-            Saya memiliki ketertarikan pada pengembangan
-            dashboard, platform SaaS, sistem informasi,
-            serta aplikasi berbasis geolokasi yang
-            mengutamakan performa, skalabilitas,
-            dan pengalaman pengguna yang baik.
+          <p class="about-lead">
+            Setiap project saya bangun dengan perhatian penuh pada performa, skalabilitas, dan
+            pengalaman pengguna — baik lewat project mandiri maupun akademik.
           </p>
 
-          <p
-            class="mt-5 text-gray-400 text-lg leading-relaxed"
-          >
-            Saat ini saya terus mengembangkan kemampuan sebagai
-            Full Stack Developer melalui berbagai project nyata
-            yang saya bangun secara mandiri maupun akademik.
-          </p>
-
+          <div class="about-focus">
+            <span class="about-tag">Dashboard</span>
+            <span class="about-tag">SaaS Platform</span>
+            <span class="about-tag">Sistem Informasi</span>
+            <span class="about-tag">Geolocation Apps</span>
+          </div>
         </div>
 
-        <!-- RIGHT -->
-        <div
-          data-aos="fade-left"
-          class="grid sm:grid-cols-2 gap-5"
-        >
-
-          <div class="about-card">
-            <span class="about-number">
-              03
-            </span>
-
-            <h3 class="about-title">
-              Featured Projects
-            </h3>
-
-            <p class="about-text">
-              Sistem Prediksi Servis Motor,
-              ProFileX, dan CoffeeFinder.
-            </p>
+        <!-- RIGHT: BENTO -->
+        <div class="about-bento" data-aos="fade-left">
+          <div class="about-card about-card-lg">
+            <div class="about-card-top">
+              <span class="about-number">03</span>
+            </div>
+            <h3 class="about-card-title">Featured Projects</h3>
+            <p class="about-card-text">Sistem Prediksi Servis Motor, ProFileX, dan CoffeeFinder.</p>
           </div>
 
           <div class="about-card">
-            <span class="about-number">
-              06
-            </span>
-
-            <h3 class="about-title">
-              Semester
-            </h3>
-
-            <p class="about-text">
-              Informatics Student at
-              Institut Teknologi Indonesia.
-            </p>
+            <span class="about-number">06</span>
+            <h3 class="about-card-title">Semester</h3>
+            <p class="about-card-text">Informatics Student, Institut Teknologi Indonesia.</p>
           </div>
 
           <div class="about-card">
-            <span class="about-number">
-              05+
-            </span>
-
-            <h3 class="about-title">
-              Core Technologies
-            </h3>
-
-            <p class="about-text">
-              Laravel, Vue.js, MySQL,
-              Tailwind CSS, REST API.
-            </p>
+            <span class="about-number">05+</span>
+            <h3 class="about-card-title">Core Technologies</h3>
+            <p class="about-card-text">Laravel, Vue.js, MySQL, Tailwind, REST API.</p>
           </div>
 
-          <div class="about-card">
-            <span class="about-number">
-              ∞
-            </span>
-
-            <h3 class="about-title">
-              Continuous Learning
-            </h3>
-
-            <p class="about-text">
-              Always exploring new tools,
-              frameworks, and technologies.
+          <div class="about-card about-card-lg about-card-accent">
+            <div class="about-card-top">
+              <span class="about-number">&#8734;</span>
+            </div>
+            <h3 class="about-card-title">Continuous Learning</h3>
+            <p class="about-card-text">
+              Terus eksplorasi tools, framework, dan teknologi baru setiap saat.
             </p>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,211 +1,178 @@
-<script setup>
-import {
-  Mail,
-  Phone,
-  Github,
-  Linkedin,
-  ArrowUpRight,
-} from 'lucide-vue-next'
-</script>
-
 <template>
-  <section
-    id="contact"
-    class="py-32 bg-gray-950 relative overflow-hidden"
-  >
+  <section id="contact" class="contact">
+    <!-- ===================================== -->
+    <!-- BACKGROUND -->
+    <!-- ===================================== -->
 
-    <div
-  class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center"
->
-  <div class="w-200 h-px bg-gradient-to-r from-transparent to-cyan-400/60"></div>
+    <div class="section-bg">
+      <div class="section-grid"></div>
 
-  <div
-    class="w-2 h-2 rounded-full bg-cyan-400 mx-3
-          shadow-[0_0_12px_rgba(34,211,238,0.8)]">
-  </div>
+      <div class="section-light-left"></div>
 
-  <div class="w-200 h-px bg-gradient-to-l from-transparent to-cyan-400/60"></div>
-</div>
+      <div class="section-light-right"></div>
 
-    <div
-      class="absolute left-0 bottom-0 w-96 h-96 bg-cyan-500/5 blur-3xl rounded-full"
-    />
+      <div class="section-center-glow"></div>
 
-    <div
-      class="max-w-6xl mx-auto px-6 relative z-10"
-    >
-      <!-- Header -->
-      <div
-        class="text-center mb-20"
-        data-aos="fade-up"
-      >
-        <span
-          class="text-cyan-400 uppercase tracking-[0.3em] font-semibold"
-        >
-          Contact
-        </span>
+      <div class="section-noise"></div>
+    </div>
 
-        <h2
-          class="text-4xl md:text-5xl font-black text-white mt-4"
-        >
-          Let's Build Something Great Together
-        </h2>
+    <!-- Section divider -->
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
 
-        <p
-          class="text-gray-400 mt-5 max-w-2xl mx-auto"
-        >
-          Saya terbuka untuk peluang internship,
-          freelance project, kolaborasi, maupun
-          diskusi seputar pengembangan web dan teknologi.
+    <!-- ===================================== -->
+    <!-- CONTAINER -->
+    <!-- ===================================== -->
+
+    <div class="contact-container">
+      <!-- HEADER -->
+
+      <div class="contact-header" data-aos="fade-up">
+        <span class="contact-badge"> CONTACT </span>
+
+        <h2 class="contact-title">Let's Build Something Great Together</h2>
+
+        <p class="contact-description">
+          Saya terbuka untuk peluang internship, freelance project, kolaborasi, maupun diskusi
+          seputar pengembangan web modern.
         </p>
       </div>
 
-      <!-- Main Card -->
-      <div
-        class="contact-premium"
-        data-aos="fade-up"
-      >
-        <!-- LEFT -->
-        <div>
+      <!-- ===================================== -->
+      <!-- MAIN -->
+      <!-- ===================================== -->
 
-          <h3
-            class="text-3xl font-black text-white"
-          >
-            Get In Touch
-          </h3>
+      <div class="contact-layout" data-aos="fade-up" data-aos-delay="150">
+        <!-- ================= LEFT ================= -->
 
-          <p
-            class="text-gray-400 mt-6 leading-relaxed"
-          >
-            Jika Anda memiliki peluang magang,
-            project menarik, atau ingin berdiskusi
-            mengenai teknologi dan pengembangan web,
-            saya akan senang untuk terhubung.
+        <div class="contact-info">
+          <span class="contact-status"> ● Available for Internship </span>
+
+          <h3 class="contact-heading">Get In Touch</h3>
+
+          <p class="contact-text">
+            Jika Anda memiliki project, peluang internship, freelance, maupun ingin berdiskusi
+            mengenai pengembangan web, saya akan senang untuk terhubung.
           </p>
 
-          <div
-            class="flex flex-wrap gap-3 mt-8"
-          >
-            <span class="contact-tag">
-              Internship
-            </span>
+          <div class="contact-tags">
+            <span class="contact-tag"> Internship </span>
 
-            <span class="contact-tag">
-              Freelance
-            </span>
+            <span class="contact-tag"> Freelance </span>
 
-            <span class="contact-tag">
-              Collaboration
-            </span>
+            <span class="contact-tag"> Collaboration </span>
           </div>
-
         </div>
 
-        <!-- RIGHT -->
-        <div
-          class="space-y-4"
-        >
-          <a
-            href="mailto:m.fahkri123@gmail.com"
-            class="contact-link"
-          >
-            <div class="contact-left">
-              <Mail
-                :size="20"
-                class="text-cyan-400"
-              />
+        <!-- ================= RIGHT ================= -->
+
+        <div class="contact-card">
+          <!-- EMAIL -->
+          <a :href="`mailto:${contact.email}`" class="contact-item">
+            <div class="contact-item-left">
+              <Mail :size="20" />
 
               <div>
-                <p class="contact-label">
-                  Email
-                </p>
+                <span class="contact-label"> Email </span>
 
-                <p class="contact-value">
-                  m.fahkri123@gmail.com
-                </p>
+                <strong>
+                  {{ contact.email }}
+                </strong>
               </div>
             </div>
 
             <ArrowUpRight :size="18" />
           </a>
 
-          <a
-            href="https://wa.me/6282211495926"
-            target="_blank"
-            class="contact-link"
-          >
-            <div class="contact-left">
-              <Phone
-                :size="20"
-                class="text-cyan-400"
-              />
+          <!-- WHATSAPP -->
+
+          <!-- <a
+                    :href="contact.whatsapp"
+                    target="_blank"
+                    class="contact-item"
+                >
+
+                    <div class="contact-item-left">
+
+                        <Phone :size="20" />
+
+                        <div>
+
+                            <span class="contact-label">
+
+                                WhatsApp
+
+                            </span>
+
+                            <strong>
+
+                                {{ contact.phone }}
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <ArrowUpRight :size="18" />
+
+                </a> -->
+
+          <!-- GITHUB -->
+
+          <a :href="contact.github" target="_blank" class="contact-item">
+            <div class="contact-item-left">
+              <Github :size="20" />
 
               <div>
-                <p class="contact-label">
-                  WhatsApp
-                </p>
+                <span class="contact-label"> GitHub </span>
 
-                <p class="contact-value">
-                  082211495926
-                </p>
+                <strong> github.com/fahkrieal </strong>
               </div>
             </div>
 
             <ArrowUpRight :size="18" />
           </a>
 
-          <a
-            href="https://github.com/fahkrieal"
-            target="_blank"
-            class="contact-link"
-          >
-            <div class="contact-left">
-              <Github
-                :size="20"
-                class="text-cyan-400"
-              />
+          <!-- LINKEDIN -->
+
+          <a :href="contact.linkedin" target="_blank" class="contact-item">
+            <div class="contact-item-left">
+              <Linkedin :size="20" />
 
               <div>
-                <p class="contact-label">
-                  GitHub
-                </p>
+                <span class="contact-label"> LinkedIn </span>
 
-                <p class="contact-value">
-                  github.com/fahkrieal
-                </p>
+                <strong> View Profile </strong>
               </div>
             </div>
 
             <ArrowUpRight :size="18" />
           </a>
-
-          <a
-            href="https://www.linkedin.com/in/muhamad-fahkrie-al-mufid-883bbb257/"
-            target="_blank"
-            class="contact-link"
-          >
-            <div class="contact-left">
-              <Linkedin
-                :size="20"
-                class="text-cyan-400"
-              />
-
-              <div>
-                <p class="contact-label">
-                  LinkedIn
-                </p>
-
-                <p class="contact-value">
-                  View Profile
-                </p>
-              </div>
-            </div>
-
-            <ArrowUpRight :size="18" />
-          </a>
-
         </div>
       </div>
     </div>
   </section>
 </template>
+<script setup>
+import { Mail, Phone, Github, Linkedin, ArrowUpRight } from 'lucide-vue-next'
+
+/* ==========================================================
+   CONTACT INFO
+========================================================== */
+
+const contact = {
+  email: 'm.fahkri123@gmail.com',
+
+  phone: '+62 822-1149-5926',
+
+  whatsapp: 'https://wa.me/6282211495926',
+
+  github: 'https://github.com/fahkrieal',
+
+  linkedin: 'https://www.linkedin.com/in/muhamad-fahkrie-al-mufid-883bbb257/',
+}
+</script>

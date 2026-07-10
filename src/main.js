@@ -1,4 +1,15 @@
-import './style.css'
+import './assets/css/variables.css'
+import './assets/css/reset.css'
+import './assets/css/global.css'
+import './assets/css/animation.css'
+
+import './assets/css/hero.css'
+import './assets/css/about.css'
+import './assets/css/project.css'
+import './assets/css/skills.css'
+import './assets/css/contact.css'
+import './assets/css/footer.css'
+import './assets/css/navbar.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'

@@ -1,158 +1,159 @@
+<template>
+  <section id="projects" class="projects">
+    <!-- Section divider -->
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
+
+    <!-- Background -->
+
+    <div class="section-bg">
+      <div class="section-grid"></div>
+
+      <div class="section-light-left"></div>
+
+      <div class="section-light-right"></div>
+
+      <div class="section-center-glow"></div>
+
+      <div class="section-noise"></div>
+    </div>
+
+    <!-- Container -->
+
+    <div class="projects-container">
+      <!-- ============================= -->
+      <!-- HEADER -->
+      <!-- ============================= -->
+
+      <div class="projects-header" data-aos="fade-up">
+        <div class="projects-badge">Featured Projects</div>
+
+        <h2 class="projects-title">Selected Work</h2>
+
+        <p class="projects-description">
+          Beberapa project yang menunjukkan kemampuan saya dalam membangun aplikasi web modern
+          menggunakan Laravel, Vue.js, MySQL, REST API, dan teknologi pendukung lainnya.
+        </p>
+      </div>
+
+      <!-- ============================= -->
+      <!-- PROJECT LIST -->
+      <!-- ============================= -->
+
+      <div class="projects-list">
+        <article
+          v-for="(project, index) in projects"
+          :key="project.title"
+          class="project-card"
+          :class="{
+            reverse: index % 2,
+          }"
+          data-aos="fade-up"
+          :data-aos-delay="index * 150"
+        >
+          <!-- IMAGE -->
+
+          <div class="project-image-column">
+            <div class="project-image-wrapper">
+              <img :src="project.image" :alt="project.title" class="project-image" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+
+          <div class="project-content">
+            <div class="project-line"></div>
+
+            <span class="project-role">
+              {{ project.role }}
+            </span>
+
+            <h3 class="project-name">
+              {{ project.title }}
+            </h3>
+
+            <p class="project-text">
+              {{ project.description }}
+            </p>
+
+            <!-- Tech -->
+
+            <div class="project-tech-list">
+              <span v-for="tech in project.tech" :key="tech" class="project-tech">
+                {{ tech }}
+              </span>
+            </div>
+
+            <!-- Action -->
+
+            <div class="project-actions">
+              <a :href="project.github" target="_blank" class="project-button">
+                <Github :size="18" />
+
+                <span> View on GitHub </span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script setup>
+import { Github } from 'lucide-vue-next'
+
+/* ==========================================================
+   PROJECT DATA
+========================================================== */
+
 const projects = [
   {
     title: 'Sistem Prediksi Servis Motor',
+
     role: 'Academic Project',
+
     image: '/projects/mmssport.png',
+
     description:
-      'Aplikasi prediksi jadwal servis kendaraan berbasis web dengan dashboard monitoring, riwayat servis, dan manajemen kendaraan.',
+      'Aplikasi prediksi jadwal servis kendaraan berbasis web dengan dashboard monitoring, riwayat servis, manajemen kendaraan, serta sistem prediksi servis berbasis kilometer.',
+
     tech: ['Laravel', 'Vue.js', 'MySQL', 'REST API'],
+
     github: '#',
   },
 
   {
     title: 'ProFileX',
+
     role: 'Academic Project',
+
     image: '/projects/profilex.png',
+
     description:
-      'Platform SaaS modern untuk pembuatan company profile dengan autentikasi, subscription, dashboard admin, dan REST API.',
+      'Platform SaaS modern untuk membuat Company Profile dengan autentikasi, dashboard admin, subscription, payment, dan REST API.',
+
     tech: ['Laravel', 'Vue.js', 'Sanctum', 'TailAdmin'],
+
     github: '#',
   },
 
   {
     title: 'CoffeeFinder',
+
     role: 'Academic Project',
+
     image: '/projects/coffeefinder.png',
+
     description:
-      'Sistem informasi geografis untuk menemukan coffee shop berbasis lokasi dengan peta interaktif dan fitur pencarian.',
+      'Sistem Informasi Geografis untuk menemukan coffee shop menggunakan peta interaktif, pencarian lokasi, dan filter fasilitas.',
+
     tech: ['Vue.js', 'Leaflet', 'OpenStreetMap', 'Laravel'],
+
     github: '#',
   },
 ]
 </script>
-
-<template>
-  <section
-    id="projects"
-    class="py-32 bg-gray-950 relative overflow-hidden"
->
-  <div
-  class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center"
->
-  <div class="w-200 h-px bg-gradient-to-r from-transparent to-cyan-400/60"></div>
-
-  <div
-    class="w-2 h-2 rounded-full bg-cyan-400 mx-3
-          shadow-[0_0_12px_rgba(34,211,238,0.8)]">
-  </div>
-
-  <div class="w-200 h-px bg-gradient-to-l from-transparent to-cyan-400/60"></div>
-</div>
-
-    <div class="max-w-6xl mx-auto px-6">
-
-      <!-- Header -->
-      <div
-        class="text-center mb-24"
-        data-aos="fade-up"
-      >
-        <span
-          class="text-cyan-400 uppercase tracking-[0.3em] font-semibold"
-        >
-          Featured Projects
-        </span>
-
-        <h2
-          class="text-4xl md:text-5xl font-black text-white mt-4"
-        >
-          Selected Work
-        </h2>
-
-        <p
-          class="text-gray-400 mt-5 max-w-2xl mx-auto"
-        >
-          Beberapa project yang menunjukkan kemampuan saya dalam
-          membangun aplikasi modern menggunakan Laravel, Vue.js,
-          MySQL, dan teknologi web lainnya.
-        </p>
-      </div>
-
-      <!-- Projects -->
-      <div
-        v-for="(project,index) in projects"
-        :key="project.title"
-        class="project-item"
-        data-aos="fade-up"
-        :data-aos-delay="index * 150"
-      >
-        <div
-          class="grid lg:grid-cols-2 gap-16 items-center"
-        >
-
-          <!-- IMAGE -->
-          <div
-            :class="{
-              'lg:order-2': index % 2
-            }"
-          >
-            <div class="project-image-wrapper">
-
-              <img
-                :src="project.image"
-                :alt="project.title"
-                class="project-image"
-              />
-
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div
-            :class="{
-              'lg:order-1': index % 2
-            }"
-          >
-            <div class="project-line"></div>
-
-            <p
-              class="text-cyan-400 font-semibold uppercase tracking-wider mb-3"
-            >
-              {{ project.role }}
-            </p>
-
-            <h3
-              class="project-title"
-            >
-              {{ project.title }}
-            </h3>
-
-            <p
-              class="text-gray-400 mt-6 leading-relaxed"
-            >
-              {{ project.description }}
-            </p>
-
-            <!-- TECH -->
-            <div
-              class="flex flex-wrap gap-3 mt-8"
-            >
-              <span
-                v-for="tech in project.tech"
-                :key="tech"
-                class="project-tech"
-              >
-                {{ tech }}
-              </span>
-            </div>
-
-            
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-</template>

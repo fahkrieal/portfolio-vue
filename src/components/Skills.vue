@@ -1,163 +1,100 @@
 <script setup>
-import {
-  Monitor,
-  Server,
-  Database,
-  Wrench,
-} from 'lucide-vue-next'
+import { Monitor, Server, Database, Wrench } from 'lucide-vue-next'
 
 const skills = [
   {
     title: 'Frontend Engineering',
     icon: Monitor,
-    description:
-      'Building responsive and modern user interfaces.',
-
-    items: [
-      'Vue.js',
-      'JavaScript',
-      'Tailwind CSS',
-      'HTML5',
-      'CSS3',
-    ],
+    description: 'Building responsive and modern user interfaces.',
+    items: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3'],
   },
-
   {
     title: 'Backend Engineering',
     icon: Server,
-    description:
-      'Developing scalable APIs and web applications.',
-
-    items: [
-      'Laravel',
-      'PHP',
-      'REST API',
-      'Sanctum',
-    ],
+    description: 'Developing scalable APIs and web applications.',
+    items: ['Laravel', 'PHP', 'REST API', 'Sanctum'],
   },
-
   {
     title: 'Database & API',
     icon: Database,
-    description:
-      'Managing data structures and backend integration.',
-
-    items: [
-      'MySQL',
-      'Database Design',
-      'API Integration',
-    ],
+    description: 'Managing data structures and backend integration.',
+    items: ['MySQL', 'Database Design', 'API Integration'],
   },
-
   {
     title: 'Development Workflow',
     icon: Wrench,
-    description:
-      'Tools used for collaboration and deployment.',
-
-    items: [
-      'Git',
-      'GitHub',
-      'Postman',
-      'Figma',
-      'TailAdmin',
-    ],
+    description: 'Tools used for collaboration and deployment.',
+    items: ['Git', 'GitHub', 'Postman', 'Figma', 'TailAdmin'],
   },
 ]
 </script>
 
 <template>
-  <section
-    id="skills"
-    class="py-32 bg-gray-950 relative overflow-hidden"
-  >
+  <section id="skills" class="skill-section">
+    <!-- Section divider -->
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
 
-    <div
-  class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center"
->
-  <div class="w-200 h-px bg-gradient-to-r from-transparent to-cyan-400/60"></div>
+    <!-- Background -->
 
-  <div
-    class="w-2 h-2 rounded-full bg-cyan-400 mx-3
-          shadow-[0_0_12px_rgba(34,211,238,0.8)]">
-  </div>
+    <div class="section-bg">
+      <div class="section-grid"></div>
 
-  <div class="w-200 h-px bg-gradient-to-l from-transparent to-cyan-400/60"></div>
-</div>
+      <div class="section-light-left"></div>
 
-    <div
-      class="absolute left-0 top-20 w-96 h-96 bg-cyan-500/5 blur-3xl rounded-full"
-    />
+      <div class="section-light-right"></div>
 
-    <div
-      class="max-w-6xl mx-auto px-6 relative z-10"
-    >
+      <div class="section-center-glow"></div>
+
+      <div class="section-noise"></div>
+    </div>
+    
+    <!-- Ambient glow -->
+    <div class="skill-glow"></div>
+
+    <div class="skill-container">
       <!-- Header -->
-      <div
-        class="text-center mb-24"
-        data-aos="fade-up"
-      >
-        <span
-          class="text-cyan-400 uppercase tracking-[0.3em] font-semibold"
-        >
+      <div class="skill-header" data-aos="fade-up">
+        <span class="skill-kicker">
+          <span class="skill-kicker-dot"></span>
           Skills
         </span>
 
-        <h2
-          class="text-4xl md:text-5xl font-black text-white mt-4"
-        >
-          Technologies & Expertise
-        </h2>
+        <h2 class="skill-heading">Technologies &amp; Expertise</h2>
 
-        <p
-          class="text-gray-400 mt-5 max-w-2xl mx-auto"
-        >
-          Tools, technologies, and frameworks I use to
-          design, develop, and deploy modern web applications.
+        <p class="skill-subtext">
+          Tools, technologies, and frameworks I use to design, develop, and deploy modern web
+          applications.
         </p>
       </div>
 
-      <!-- Cards -->
-      <div
-        class="grid md:grid-cols-2 gap-6"
-      >
+      <!-- Index list -->
+      <div class="skill-list">
         <div
           v-for="(skill, index) in skills"
           :key="skill.title"
-          class="skill-card"
+          class="skill-row"
           data-aos="fade-up"
           :data-aos-delay="index * 100"
         >
-          <div
-            class="flex items-center gap-4 mb-5"
-          >
-            <component
-              :is="skill.icon"
-              :size="30"
-              class="text-cyan-400"
-            />
+          <span class="skill-index">
+            {{ String(index + 1).padStart(2, '0') }}
+          </span>
 
-            <h3
-              class="text-xl font-bold text-white"
-            >
-              {{ skill.title }}
-            </h3>
+          <div class="skill-icon-wrap">
+            <component :is="skill.icon" :size="22" class="skill-icon" />
           </div>
 
-          <p
-            class="text-gray-400 mb-6"
-          >
-            {{ skill.description }}
-          </p>
+          <div class="skill-row-head">
+            <h3 class="skill-row-title">{{ skill.title }}</h3>
+            <p class="skill-row-desc">{{ skill.description }}</p>
+          </div>
 
-          <div
-            class="flex flex-wrap gap-3"
-          >
-            <span
-              v-for="item in skill.items"
-              :key="item"
-              class="skill-badge"
-            >
+          <div class="skill-tags">
+            <span v-for="item in skill.items" :key="item" class="skill-tag">
               {{ item }}
             </span>
           </div>

@@ -1,145 +1,157 @@
-<script setup>
-import {
-  Github,
-  Linkedin,
-  Mail,
-} from 'lucide-vue-next'
-</script>
-
 <template>
-  <footer
-    class="bg-gray-950 border-t border-gray-800 relative overflow-hidden"
-  >
-    <!-- Glow -->
-    <div
-      class="absolute right-0 bottom-0 w-72 h-72 bg-cyan-500/5 blur-3xl rounded-full"
-    />
+  <footer id="footer" class="footer">
+    <!-- ========================= -->
+    <!-- Background -->
+    <!-- ========================= -->
 
-    <div
-      class="max-w-6xl mx-auto px-6 py-16 relative z-10"
-    >
-      <div
-        class="grid md:grid-cols-3 gap-10"
-      >
+    <div class="section-bg">
+      <div class="section-grid"></div>
+
+      <div class="section-light-left"></div>
+
+      <div class="section-light-right"></div>
+
+      <div class="section-light-top"></div>
+
+      <div class="section-spotlight"></div>
+
+      <div class="section-noise"></div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- Container -->
+    <!-- ========================= -->
+
+    <div class="footer-container">
+      <!-- ========================= -->
+      <!-- TOP -->
+      <!-- ========================= -->
+
+      <div class="footer-top">
         <!-- Brand -->
-        <div>
-          <h3
-            class="text-2xl font-black text-white"
-          >
-            Fahkrie
-            <span class="text-cyan-400">
-              .dev
-            </span>
-          </h3>
 
-          <p
-            class="text-gray-400 mt-4 leading-relaxed"
-          >
-            Full Stack Developer focused on
-            building modern web applications
-            using Laravel, Vue.js, MySQL,
-            and Tailwind CSS.
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">
+            <span class="logo-white"> Fahkrie </span>
+
+            <span class="logo-cyan"> .dev </span>
+          </a>
+
+          <p class="footer-description">
+            Full Stack Developer yang berfokus pada pengembangan aplikasi web modern menggunakan
+            Laravel, Vue.js, MySQL, REST API, dan teknologi web modern.
           </p>
         </div>
 
         <!-- Navigation -->
-        <div>
-          <h4
-            class="text-white font-semibold mb-4"
-          >
-            Navigation
-          </h4>
 
-          <div
-            class="flex flex-col gap-3"
-          >
-            <a
-              href="#about"
-              class="footer-link"
-            >
-              About
-            </a>
+        <div class="footer-navigation">
+          <h4>Navigation</h4>
 
-            <a
-              href="#skills"
-              class="footer-link"
-            >
-              Skills
-            </a>
+          <nav>
+            <a href="#hero"> Home </a>
 
-            <a
-              href="#projects"
-              class="footer-link"
-            >
-              Projects
-            </a>
+            <a href="#about"> About </a>
 
-            <a
-              href="#contact"
-              class="footer-link"
-            >
-              Contact
-            </a>
-          </div>
+            <a href="#skills"> Skills </a>
+
+            <a href="#projects"> Projects </a>
+
+            <a href="#contact"> Contact </a>
+          </nav>
         </div>
 
         <!-- Social -->
-        <div>
-          <h4
-            class="text-white font-semibold mb-4"
-          >
-            Connect
-          </h4>
 
-          <div
-            class="flex gap-4"
-          >
-            <!-- GitHub -->
-            <a
-              href="https://github.com/fahkrieal"
-              target="_blank"
-              class="social-icon"
-            >
+        <div class="footer-social">
+          <h4>Connect</h4>
+
+          <div class="footer-social-list">
+            <a href="https://github.com/fahkrieal" target="_blank" class="footer-social-item">
               <Github :size="20" />
             </a>
 
-            <!-- LinkedIn -->
             <a
               href="https://www.linkedin.com/in/muhamad-fahkrie-al-mufid-883bbb257/"
               target="_blank"
-              class="social-icon"
+              class="footer-social-item"
             >
               <Linkedin :size="20" />
             </a>
 
-            <!-- Email -->
-            <a
-              href="mailto:m.fahkri123@gmail.com"
-              class="social-icon"
-            >
+            <a href="mailto:m.fahkri123@gmail.com" class="footer-social-item">
               <Mail :size="20" />
             </a>
           </div>
         </div>
       </div>
 
+      <!-- ========================= -->
       <!-- Bottom -->
-      <div
-        class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4"
-      >
-        <p
-          class="text-gray-500 text-sm"
-        >
-          © 2026 Muhamad Fahkrie Al Mufid.
-          All rights reserved.
-        </p>
+      <!-- ========================= -->
 
-        <p
-          class="text-gray-500 text-sm"
-        >
-          Built with Vue.js & Tailwind CSS
-        </p>
+      <div class="footer-bottom">
+        <p>© 2026 Muhamad Fahkrie Al Mufid. All Rights Reserved.</p>
+
+        <p>Crafted with Vue.js • Vite • Tailwind CSS</p>
       </div>
     </div>
   </footer>
 </template>
+<script setup>
+import { Github, Linkedin, Mail } from 'lucide-vue-next'
+
+/* ==========================================================
+   FOOTER DATA
+========================================================== */
+
+const footer = {
+  brand: {
+    name: 'Fahkrie',
+
+    suffix: '.dev',
+
+    description:
+      'Full Stack Developer yang berfokus pada pengembangan aplikasi web modern menggunakan Laravel, Vue.js, MySQL, REST API, dan teknologi web modern.',
+  },
+
+  navigation: [
+    {
+      name: 'Home',
+      href: '#hero',
+    },
+
+    {
+      name: 'About',
+      href: '#about',
+    },
+
+    {
+      name: 'Skills',
+      href: '#skills',
+    },
+
+    {
+      name: 'Projects',
+      href: '#projects',
+    },
+
+    {
+      name: 'Contact',
+      href: '#contact',
+    },
+  ],
+
+  social: {
+    github: 'https://github.com/fahkrieal',
+
+    linkedin: 'https://www.linkedin.com/in/muhamad-fahkrie-al-mufid-883bbb257/',
+
+    email: 'mailto:m.fahkri123@gmail.com',
+  },
+
+  copyright: '© 2026 Muhamad Fahkrie Al Mufid. All Rights Reserved.',
+
+  builtWith: 'Crafted with Vue.js • Vite • Tailwind CSS',
+}
+</script>

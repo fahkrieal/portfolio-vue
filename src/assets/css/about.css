@@ -1,0 +1,351 @@
+/* =====================================================
+   ABOUT SECTION — BASE
+===================================================== */
+.about-section {
+  position: relative;
+  padding: 160px 0;
+  background: var(--bg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* =====================================================
+   GRID — ASYMMETRIC SPLIT (not 50/50)
+===================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: center;
+  gap: 90px;
+}
+
+/* =====================================================
+   LEFT — CONTENT
+===================================================== */
+.about-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.about-kicker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px rgba(94, 234, 212, 0.6);
+  animation: pulseDot 2.2s ease-in-out infinite;
+}
+
+.about-heading {
+  margin-top: 22px;
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.about-lead {
+  margin-top: 24px;
+  max-width: 56ch;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.about-lead + .about-lead {
+  margin-top: 16px;
+}
+
+.about-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.about-tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-tag:hover {
+    border-color: rgba(94, 234, 212, 0.4);
+    color: var(--primary);
+    background: rgba(94, 234, 212, 0.05);
+    transform: translateY(-2px);
+  }
+}
+
+.about-tag:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.about-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 44px;
+  padding-bottom: 3px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-cta::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-cta-icon {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-cta:hover {
+    color: var(--primary);
+  }
+
+  .about-cta:hover::after {
+    transform: scaleX(1);
+  }
+
+  .about-cta:hover .about-cta-icon {
+    transform: translateX(4px);
+  }
+}
+
+.about-cta:active {
+  transform: translateY(1px);
+}
+
+/* =====================================================
+   RIGHT — BENTO GRID (asymmetric, not uniform 2x2)
+===================================================== */
+.about-bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.about-card {
+  position: relative;
+  padding: 32px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 24px 50px -28px rgba(2, 6, 23, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.about-card-lg {
+  grid-column: span 2;
+}
+
+.about-card-accent {
+  border-color: rgba(94, 234, 212, 0.2);
+  background: linear-gradient(160deg, rgba(94, 234, 212, 0.07), rgba(255, 255, 255, 0.01));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(94, 234, 212, 0.3);
+    box-shadow:
+      0 30px 60px -24px rgba(2, 6, 23, 0.7),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 0 1px rgba(94, 234, 212, 0.06);
+  }
+}
+
+.about-card:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+.about-card-top {
+  display: flex;
+  align-items: center;
+}
+
+.about-number {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  opacity: 0.92;
+}
+
+.about-card-title {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.about-card-text {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* =====================================================
+   KEYFRAMES
+===================================================== */
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.55;
+  }
+}
+
+@keyframes aboutGlowMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-24px, 22px);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1200px) {
+  .about-grid {
+    gap: 64px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .about-heading {
+    max-width: none;
+  }
+  .about-lead {
+    max-width: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    padding: 130px 0;
+  }
+  .about-divider {
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 0 24px;
+  }
+  .about-heading {
+    font-size: 2rem;
+  }
+  .about-lead {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+  .about-bento {
+    gap: 16px;
+  }
+  .about-card {
+    padding: 26px;
+    border-radius: 24px;
+  }
+  .about-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 100px 0;
+  }
+  .about-divider {
+    gap: 10px;
+    margin-bottom: 56px;
+  }
+  .about-divider-line {
+    max-width: 70px;
+  }
+  .about-bento {
+    grid-template-columns: 1fr;
+  }
+  .about-card-lg {
+    grid-column: span 1;
+  }
+  .about-tag {
+    font-size: 0.75rem;
+    padding: 7px 14px;
+  }
+  .about-cta {
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-heading {
+    font-size: 1.75rem;
+  }
+  .about-card {
+    padding: 22px;
+  }
+}

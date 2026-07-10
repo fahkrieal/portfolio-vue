@@ -1,0 +1,76 @@
+/* =========================================
+   RESET
+========================================= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+}
+
+img,
+picture{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button,
+input,
+textarea{
+
+    font:inherit;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:#081018;
+
+}

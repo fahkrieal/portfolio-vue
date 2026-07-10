@@ -1,134 +1,225 @@
 <template>
-  <section
-    id="hero"
-    class="min-h-screen flex items-center bg-gray-950 relative overflow-hidden pt-28 lg:pt-20"
-  >
-    <!-- Background Glow -->
-    <div
-      class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full"
-    />
+  <section id="hero" class="hero">
+    <!-- ========================= -->
+    <!-- Background -->
+    <!-- ========================= -->
 
-    <div
-      class="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full"
-    />
+    <div class="section-bg">
+      <div class="section-grid"></div>
 
-    <div
-      class="max-w-6xl mx-auto px-6 w-full relative z-10"
-    >
-      <div
-        class="grid lg:grid-cols-2 gap-16 items-center"
-      >
+      <div class="section-light-left"></div>
 
-        <!-- PHOTO -->
-<div
-  data-aos="fade-left"
-  class="order-1 lg:order-2 flex justify-center lg:justify-end"
->
-  <div class="hero-profile">
+      <div class="section-light-right"></div>
 
-    <!-- Glow -->
-    <div class="hero-profile-glow"></div>
+      <div class="section-light-top"></div>
 
-    <!-- Ring -->
-    <div class="hero-profile-ring"></div>
+      <div class="section-spotlight"></div>
 
-    <!-- Frame -->
-    <div class="hero-profile-frame">
-
-      <img
-        src="/profile.jpg"
-        alt="Muhamad Fahkrie Al Mufid"
-        class="hero-profile-image"
-      />
-
+      <div class="section-noise"></div>
     </div>
 
-    <!-- Status -->
-    <div class="hero-profile-status">
-      <span class="hero-status-dot"></span>
-      Junior Developer
-    </div>
+    <!-- ========================= -->
+    <!-- Container -->
+    <!-- ========================= -->
 
-  </div>
-</div>
+    <div class="hero-container">
+      <div class="hero-grid">
+        <!-- ========================= -->
+        <!-- LEFT -->
+        <!-- ========================= -->
 
-        <!-- TEXT -->
-        <div
-          data-aos="fade-right"
-          class="order-2 lg:order-1 text-center lg:text-left"
-        >
+        <div class="hero-content" data-aos="fade-right">
+          <!-- Badge -->
 
-          <!-- Status -->
-          <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-8"
-          >
-            <span
-              class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
-            ></span>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
 
-            Available for Internship & Opportunities
+            <span> Available for Internship & Opportunities </span>
           </div>
 
           <!-- Name -->
-          <h1
-            class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight"
-          >
+
+          <h1 class="hero-title">
             Muhamad
 
-            <span class="text-cyan-400">
-              Fahkrie
-            </span>
-
-            <br />
+            <span class="hero-accent"> Fahkrie </span>
 
             Al Mufid
           </h1>
 
           <!-- Role -->
-          <h2
-            class="mt-6 text-2xl md:text-3xl font-semibold text-gray-300"
-          >
-            Full Stack Developer
-          </h2>
+
+          <h2 class="hero-role">Full Stack Developer</h2>
 
           <!-- Description -->
-          <p
-            class="mt-6 text-lg text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0"
-          >
-            Mahasiswa Informatika yang berfokus pada
-            pengembangan aplikasi web modern menggunakan
-            Laravel, Vue.js, MySQL, Tailwind CSS,
-            dan REST API.
+
+          <p class="hero-description">
+            Mahasiswa Teknik Informatika yang berfokus pada pengembangan aplikasi web modern
+            menggunakan Laravel, Vue.js, MySQL, Tailwind CSS, dan REST API.
           </p>
 
           <!-- Tech Stack -->
-          <div
-            class="flex flex-wrap gap-3 mt-8 justify-center lg:justify-start"
-          >
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">REST API</span>
+
+          <div class="hero-stack">
+            <span>Laravel</span>
+
+            <span class="hero-stack-dot">•</span>
+
+            <span>Vue.js</span>
+
+            <span class="hero-stack-dot">•</span>
+
+            <span>MySQL</span>
+
+            <span class="hero-stack-dot">•</span>
+
+            <span>REST API</span>
           </div>
 
-          <!-- CV -->
-          <div
-            class="mt-10 flex justify-center lg:justify-start"
-          >
+          <!-- Button -->
+
+          <div class="hero-actions">
+            <a href="/cv.pdf" target="_blank" class="hero-btn hero-btn-primary"> Download CV </a>
+
             <a
-              href="/cv.pdf"
+              href="https://github.com/fahkrieal"
               target="_blank"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition-all duration-300 hover:-translate-y-1"
+              class="hero-btn hero-btn-secondary"
             >
-              Download CV
+              GitHub
             </a>
           </div>
-          <br>
-
         </div>
 
+        <!-- ========================= -->
+        <!-- PHOTO -->
+        <!-- ========================= -->
+
+        <div class="hero-image-wrapper" data-aos="fade-left">
+          <div ref="photoRef" class="hero-image-shell">
+            <!-- Glow -->
+
+            <div class="hero-image-glow"></div>
+
+            <!-- Orbit -->
+
+            <div class="hero-orbit hero-orbit-1"></div>
+
+            <div class="hero-orbit hero-orbit-2"></div>
+
+            <!-- Border -->
+
+            <div class="hero-image-border">
+              <div class="hero-image-frame">
+                <img src="/profile.jpg" alt="Muhamad Fahkrie Al Mufid" class="hero-image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Card -->
+
+          <div class="hero-floating-card">
+            <div class="hero-floating-dot"></div>
+
+            <div>
+              <small> ROLE </small>
+
+              <strong> Junior Developer </strong>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+import { Download, Github, ArrowDown } from 'lucide-vue-next'
+
+/* ---------------------------------------
+   TECH STACK
+--------------------------------------- */
+
+const techStack = ['Laravel', 'Vue.js', 'MySQL', 'REST API']
+
+/* ---------------------------------------
+   PHOTO REF
+--------------------------------------- */
+
+const photoRef = ref(null)
+
+let animationFrame = null
+
+/* ---------------------------------------
+   MOUSE TILT
+--------------------------------------- */
+
+const handleMouseMove = (e) => {
+  if (!photoRef.value) return
+
+  cancelAnimationFrame(animationFrame)
+
+  animationFrame = requestAnimationFrame(() => {
+    const rect = photoRef.value.getBoundingClientRect()
+
+    const x = e.clientX - rect.left
+
+    const y = e.clientY - rect.top
+
+    const centerX = rect.width / 2
+
+    const centerY = rect.height / 2
+
+    const rotateY = ((x - centerX) / centerX) * 8
+
+    const rotateX = -((y - centerY) / centerY) * 8
+
+    photoRef.value.style.transform = `
+      perspective(1400px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.02)
+      `
+  })
+}
+
+/* ---------------------------------------
+   RESET
+--------------------------------------- */
+
+const resetPhoto = () => {
+  if (!photoRef.value) return
+
+  photoRef.value.style.transform = `
+    perspective(1400px)
+    rotateX(0deg)
+    rotateY(0deg)
+    scale(1)
+    `
+}
+
+/* ---------------------------------------
+   MOUNT
+--------------------------------------- */
+
+onMounted(() => {
+  if (!photoRef.value) return
+
+  photoRef.value.addEventListener('mousemove', handleMouseMove)
+
+  photoRef.value.addEventListener('mouseleave', resetPhoto)
+})
+
+/* ---------------------------------------
+   CLEANUP
+--------------------------------------- */
+
+onBeforeUnmount(() => {
+  if (!photoRef.value) return
+
+  photoRef.value.removeEventListener('mousemove', handleMouseMove)
+
+  photoRef.value.removeEventListener('mouseleave', resetPhoto)
+})
+</script>
