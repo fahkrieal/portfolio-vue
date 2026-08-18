@@ -409,20 +409,24 @@ onBeforeUnmount(() => {
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.75rem;
     padding-top: 0.5rem;
   }
   .hero-right-content {
     order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
   .hero-section {
-    padding-top: calc(var(--header-height) + 1rem);
+    padding-top: calc(var(--header-height) + 0.75rem);
   }
 }
 
 @media (max-width: 480px) {
   .hero-main-title {
-    font-size: 2.25rem;
+    font-size: clamp(2.1rem, 8vw, 2.85rem);
     line-height: 1;
   }
   .hero-action-row {

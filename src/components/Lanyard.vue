@@ -687,21 +687,46 @@ onBeforeUnmount(() => {
 }
 
 /* Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .lanyard-container {
-    max-width: 290px;
-    min-height: 420px;
+    max-width: 270px;
+    min-height: 385px;
+    padding-top: 55px;
+    margin: 0 auto;
     cursor: default;
   }
   .lanyard-container:active {
     cursor: default;
   }
+  .lanyard-strap-svg {
+    top: -15px;
+    width: 240px;
+    height: 125px;
+  }
+  .lanyard-card-assembly {
+    margin-top: 25px;
+  }
+  .id-badge-card {
+    padding: 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
   .lanyard-container {
-    max-width: 260px;
-    min-height: 380px;
+    max-width: 240px;
+    min-height: 350px;
+    padding-top: 48px;
+  }
+  .lanyard-strap-svg {
+    top: -15px;
+    width: 220px;
+    height: 115px;
+  }
+  .lanyard-card-assembly {
+    margin-top: 20px;
+  }
+  .badge-photo-frame {
+    aspect-ratio: 4 / 4.2;
   }
 }
 
