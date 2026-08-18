@@ -1,157 +1,111 @@
+<script setup>
+import { ArrowUp } from 'lucide-vue-next'
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+</script>
+
 <template>
-  <footer id="footer" class="footer">
-    <!-- ========================= -->
-    <!-- Background -->
-    <!-- ========================= -->
-
-    <div class="section-bg">
-      <div class="section-grid"></div>
-
-      <div class="section-light-left"></div>
-
-      <div class="section-light-right"></div>
-
-      <div class="section-light-top"></div>
-
-      <div class="section-spotlight"></div>
-
-      <div class="section-noise"></div>
-    </div>
-
-    <!-- ========================= -->
-    <!-- Container -->
-    <!-- ========================= -->
-
-    <div class="footer-container">
-      <!-- ========================= -->
-      <!-- TOP -->
-      <!-- ========================= -->
-
-      <div class="footer-top">
-        <!-- Brand -->
-
-        <div class="footer-brand">
-          <a href="#hero" class="footer-logo">
-            <span class="logo-white"> Fahkrie </span>
-
-            <span class="logo-cyan"> .dev </span>
-          </a>
-
-          <p class="footer-description">
-            Full Stack Developer yang berfokus pada pengembangan aplikasi web modern menggunakan
-            Laravel, Vue.js, MySQL, REST API, dan teknologi web modern.
-          </p>
+  <footer class="site-footer">
+    <div class="site-container footer-inner">
+      <div class="footer-brand-side">
+        <div class="footer-logo font-display">
+          <span>MF</span>
+          <span class="footer-logo-divider">/</span>
+          <span class="footer-logo-text font-mono">FAHKRIE.DEV</span>
         </div>
-
-        <!-- Navigation -->
-
-        <div class="footer-navigation">
-          <h4>Navigation</h4>
-
-          <nav>
-            <a href="#hero"> Home </a>
-
-            <a href="#about"> About </a>
-
-            <a href="#skills"> Skills </a>
-
-            <a href="#projects"> Projects </a>
-
-            <a href="#contact"> Contact </a>
-          </nav>
-        </div>
-
-        <!-- Social -->
-
-        <div class="footer-social">
-          <h4>Connect</h4>
-
-          <div class="footer-social-list">
-            <a href="https://github.com/fahkrieal" target="_blank" class="footer-social-item">
-              <Github :size="20" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/muhamad-fahkrie-al-mufid-883bbb257/"
-              target="_blank"
-              class="footer-social-item"
-            >
-              <Linkedin :size="20" />
-            </a>
-
-            <a href="mailto:m.fahkri123@gmail.com" class="footer-social-item">
-              <Mail :size="20" />
-            </a>
-          </div>
-        </div>
+        <p class="footer-copy font-mono">
+          © 2026 Muhamad Fahkrie Al Mufid. Engineered with Vue 3, Vite &amp; Three.js.
+        </p>
       </div>
 
-      <!-- ========================= -->
-      <!-- Bottom -->
-      <!-- ========================= -->
-
-      <div class="footer-bottom">
-        <p>© 2026 Muhamad Fahkrie Al Mufid. All Rights Reserved.</p>
-
-        <p>Crafted with Vue.js • Vite • Tailwind CSS</p>
+      <div class="footer-action-side">
+        <button
+          class="back-to-top-btn font-mono"
+          data-cursor="TOP"
+          @click="scrollToTop"
+        >
+          <span>BACK TO TOP</span>
+          <ArrowUp :size="14" />
+        </button>
       </div>
     </div>
   </footer>
 </template>
-<script setup>
-import { Github, Linkedin, Mail } from 'lucide-vue-next'
 
-/* ==========================================================
-   FOOTER DATA
-========================================================== */
-
-const footer = {
-  brand: {
-    name: 'Fahkrie',
-
-    suffix: '.dev',
-
-    description:
-      'Full Stack Developer yang berfokus pada pengembangan aplikasi web modern menggunakan Laravel, Vue.js, MySQL, REST API, dan teknologi web modern.',
-  },
-
-  navigation: [
-    {
-      name: 'Home',
-      href: '#hero',
-    },
-
-    {
-      name: 'About',
-      href: '#about',
-    },
-
-    {
-      name: 'Skills',
-      href: '#skills',
-    },
-
-    {
-      name: 'Projects',
-      href: '#projects',
-    },
-
-    {
-      name: 'Contact',
-      href: '#contact',
-    },
-  ],
-
-  social: {
-    github: 'https://github.com/fahkrieal',
-
-    linkedin: 'https://www.linkedin.com/in/muhamad-fahkrie-al-mufid-883bbb257/',
-
-    email: 'mailto:m.fahkri123@gmail.com',
-  },
-
-  copyright: '© 2026 Muhamad Fahkrie Al Mufid. All Rights Reserved.',
-
-  builtWith: 'Crafted with Vue.js • Vite • Tailwind CSS',
+<style scoped>
+.site-footer {
+  border-top: 1px solid var(--border-hairline);
+  background: transparent;
+  padding: 3rem 0 4rem;
+  position: relative;
+  z-index: 10;
 }
-</script>
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-brand-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-logo-divider {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.footer-logo-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-hairline);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.back-to-top-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-amber);
+  background: rgba(229, 168, 91, 0.05);
+}
+</style>
