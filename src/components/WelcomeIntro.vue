@@ -79,8 +79,8 @@ onMounted(() => {
 .welcome-intro-screen {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   background-color: #060709;
   z-index: 99999;
   display: flex;

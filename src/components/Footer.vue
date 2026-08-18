@@ -108,4 +108,16 @@ const scrollToTop = () => {
   border-color: var(--accent-amber);
   background: rgba(229, 168, 91, 0.05);
 }
+
+@media (max-width: 480px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .back-to-top-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 </style>

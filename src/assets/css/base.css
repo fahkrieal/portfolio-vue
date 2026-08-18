@@ -17,6 +17,7 @@ html {
   text-rendering: optimizeLegibility;
   background-color: #0c0e12;
   overflow-x: hidden;
+  max-width: 100vw;
   width: 100%;
 }
 
@@ -28,8 +29,15 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
   width: 100%;
   position: relative;
+}
+
+#app {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* ==========================================================================
@@ -193,7 +201,7 @@ img {
 }
 
 .section-title-huge {
-  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-size: clamp(1.85rem, 4.5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -264,18 +272,31 @@ img {
 }
 
 /* ==========================================================================
-   Mobile Optimization Rules
+   Mobile Optimization Rules (All screen sizes from 320px to 640px)
    ========================================================================== */
 
 @media (max-width: 640px) {
   :root {
     --container-padding: 1.25rem;
-    --header-height: 64px;
+    --header-height: 60px;
   }
 
   .btn-magnetic {
     padding: 0.75rem 1.25rem;
     font-size: 0.75rem;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+    --header-height: 56px;
+  }
+
+  .section-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 

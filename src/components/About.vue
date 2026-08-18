@@ -340,4 +340,13 @@ const journeyTimeline = [
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .about-quote-box {
+    padding-left: 1rem;
+  }
+  .about-timeline-panel {
+    padding: 1.25rem 1rem;
+  }
+}
 </style>

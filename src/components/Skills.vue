@@ -259,4 +259,13 @@ const categories = [
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .matrix-category-panel {
+    padding: 1.25rem 1rem;
+  }
+  .matrix-skill-row {
+    padding: 0.625rem 0.75rem;
+  }
+}
 </style>

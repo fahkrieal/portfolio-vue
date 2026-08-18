@@ -2,7 +2,6 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { ArrowDown, Download, Github } from 'lucide-vue-next'
 import Lanyard from '@/components/Lanyard.vue'
-import Scene3D from '@/components/Scene3D.vue'
 
 const headlineRef = ref(null)
 
@@ -81,9 +80,6 @@ onBeforeUnmount(() => {
 
 <template>
   <section id="hero" class="hero-section">
-    <!-- Studio Ambient Lighting Glow Layer -->
-    <Scene3D />
-
     <div class="site-container hero-container">
       <div class="hero-grid">
         <!-- ==========================================================
@@ -262,7 +258,7 @@ onBeforeUnmount(() => {
 }
 
 .hero-main-title {
-  font-size: clamp(2.4rem, 6.2vw, 5.5rem);
+  font-size: clamp(2.2rem, 5.2vw, 5.2rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.035em;
@@ -270,6 +266,11 @@ onBeforeUnmount(() => {
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
+}
+
+.title-row {
+  display: block;
+  white-space: nowrap;
 }
 
 .title-row.primary {
@@ -409,33 +410,53 @@ onBeforeUnmount(() => {
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
-    padding-top: 0.5rem;
+    gap: 1.5rem;
+    padding-top: 0.25rem;
   }
   .hero-right-content {
     order: -1;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
   .hero-section {
-    padding-top: calc(var(--header-height) + 0.75rem);
+    padding-top: calc(var(--header-height) + 0.5rem);
+    min-height: auto;
+  }
+  .hero-main-title {
+    font-size: clamp(2rem, 6.5vw, 3.8rem);
   }
 }
 
 @media (max-width: 480px) {
   .hero-main-title {
-    font-size: clamp(2.1rem, 8vw, 2.85rem);
-    line-height: 1;
+    font-size: clamp(1.6rem, 7.8vw, 2.3rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+  .hero-role-sub {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  .hero-description-lead {
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
   .hero-action-row {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+    gap: 0.625rem;
   }
   .btn-magnetic {
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-main-title {
+    font-size: 1.45rem;
   }
 }
 </style>

@@ -621,4 +621,16 @@ const navigateToProject = (slug) => {
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .case-study-stats-bar {
+    grid-template-columns: 1fr;
+  }
+  .case-study-title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+  .pagination-nav-btn {
+    padding: 1rem;
+  }
+}
 </style>

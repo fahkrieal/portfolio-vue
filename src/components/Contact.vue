@@ -117,7 +117,7 @@ const contactChannels = [
           <div class="channels-panel">
             <div class="panel-header-row font-mono">
               <span>VERIFIED CHANNELS</span>
-              <span class="channels-count">04 PROFILES</span>
+              <span class="channels-count">03 PROFILES</span>
             </div>
 
             <div class="channels-list">
@@ -361,6 +361,28 @@ const contactChannels = [
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .email-box {
+    padding: 1rem;
+  }
+  .email-content-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .email-link {
+    word-break: break-all;
+    font-size: 1.05rem;
+  }
+  .channels-panel {
+    padding: 1.25rem 1rem;
   }
 }
 </style>

@@ -284,15 +284,14 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Mobile Drawer (100% Solid Dark on all pages) */
 .mobile-nav-drawer {
   position: fixed;
   top: var(--header-height);
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: calc(100vh - var(--header-height));
+  width: 100%;
+  height: calc(100dvh - var(--header-height));
   background: #0c0e12 !important;
   border-top: 1px solid var(--border-hairline);
   padding: 2rem var(--container-padding);

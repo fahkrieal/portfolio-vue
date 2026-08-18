@@ -34,7 +34,7 @@ let isTouchDevice = false
 
 // Pointer Drag Event Handlers (Desktop Only)
 const onPointerDown = (e) => {
-  if (isTouchDevice || prefersReducedMotion) return
+  if (e.pointerType === 'touch' || isTouchDevice || prefersReducedMotion) return
   if (e.button !== 0) return // Only primary mouse button
 
   isDragging = true
@@ -396,10 +396,16 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
   cursor: grab;
   perspective: 1200px;
+}
+
+@media (hover: hover) and (min-width: 993px) {
+  .lanyard-container {
+    touch-action: none;
+  }
 }
 
 .lanyard-container:active {
@@ -686,12 +692,14 @@ onBeforeUnmount(() => {
   letter-spacing: 0.08em;
 }
 
-/* Responsiveness */
+/* Responsiveness for all Mobile Screen Sizes (320px to 992px) */
 @media (max-width: 992px) {
   .lanyard-container {
-    max-width: 270px;
-    min-height: 385px;
-    padding-top: 55px;
+    width: min(85vw, 250px);
+    max-width: 250px;
+    min-height: auto;
+    height: auto;
+    padding-top: 10px;
     margin: 0 auto;
     cursor: default;
   }
@@ -699,31 +707,46 @@ onBeforeUnmount(() => {
     cursor: default;
   }
   .lanyard-strap-svg {
-    top: -15px;
-    width: 240px;
-    height: 125px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 70px;
+    display: block;
+    margin: 0 auto -20px auto;
   }
   .lanyard-card-assembly {
-    margin-top: 25px;
+    margin-top: 0;
+    width: 100%;
+  }
+  .swivel-connector-rig {
+    top: -20px;
   }
   .id-badge-card {
-    padding: 0.75rem;
+    padding: 0.625rem;
+    border-radius: 10px;
+  }
+  .badge-name-headline {
+    font-size: 1rem;
+  }
+  .spec-value {
+    font-size: 0.625rem;
+  }
+  .spec-label {
+    font-size: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .lanyard-container {
-    max-width: 240px;
-    min-height: 350px;
-    padding-top: 48px;
+    width: min(85vw, 230px);
+    max-width: 230px;
+    padding-top: 5px;
   }
   .lanyard-strap-svg {
-    top: -15px;
-    width: 220px;
-    height: 115px;
-  }
-  .lanyard-card-assembly {
-    margin-top: 20px;
+    height: 60px;
+    margin-bottom: -18px;
   }
   .badge-photo-frame {
     aspect-ratio: 4 / 4.2;
