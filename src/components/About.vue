@@ -55,8 +55,13 @@ const journeyTimeline = [
           <span class="section-kicker-dot"></span>
           <span>01 / ABOUT ME</span>
         </div>
-        <h2 class="section-title-huge font-display">
+        <!-- Desktop / Tablet Editorial Statement -->
+        <h2 class="section-title-huge font-display desktop-headline">
           MENGGABUNGKAN REKAYASA SISTEM<br />DENGAN KUALITAS INTERAKSI.
+        </h2>
+        <!-- Mobile Art-Directed Statement -->
+        <h2 class="section-title-huge font-display mobile-headline">
+          MEMBANGUN<br />SISTEM DIGITAL<br />YANG BERMAKNA.
         </h2>
       </div>
 
@@ -327,11 +332,37 @@ const journeyTimeline = [
   gap: 0.5rem;
 }
 
+/* Headline Responsive Variants */
+.desktop-headline {
+  display: block;
+}
+
+.mobile-headline {
+  display: none;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
   .about-main-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-headline {
+    display: none !important;
+  }
+
+  .mobile-headline {
+    display: block !important;
+    font-size: clamp(1.85rem, 8vw, 2.65rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+    word-break: normal;
+    hyphens: none;
+    max-width: 100%;
   }
 }
 
@@ -344,6 +375,10 @@ const journeyTimeline = [
 @media (max-width: 480px) {
   .about-quote-box {
     padding-left: 1rem;
+  }
+  .about-quote-text {
+    font-size: 1.0625rem;
+    line-height: 1.55;
   }
   .about-timeline-panel {
     padding: 1.25rem 1rem;
